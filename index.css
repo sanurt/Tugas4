@@ -1,0 +1,76 @@
+* {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url(pexels-bella-white-201200-635279.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(255, 250, 254);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid;
+    border-color: rgb(235, 223, 223);
+    border-radius: 4px;
+    background: transparent;
+}
+
+form input[type="textarea"] {
+    width: 100%;
+    padding:40px;
+    margin-bottom: 30px;
+    border: 2px solid ;
+    border-color: rgb(235, 223, 223);
+    border-radius: 4px;
+    background: transparent;
+}
+
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4359b3;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+
+
+

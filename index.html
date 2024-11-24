@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pendaftaran</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container">
+      <form
+        id="registrationForm"
+        action="index.php"
+        method="post"
+        enctype="multipart/form-data"
+      >
+          <label for="name">Nama:</label>
+          <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="Masukkan email Anda" />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required placeholder="Masukkan password" />
+
+          <label for="age">Umur:</label>
+          <input type="text" id="age" name="age" required placeholder="Masukkan umur Anda" />
+
+          <label for="file">Upload File (teks):</label>
+          <input type="file" id="file" name="file" accept=".txt" required />
+
+          <input type="submit" value="Daftar" />
+      </form>
+    </div>
+
+    <script>
+
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+          var age = document.getElementById("age").value;
+          var file = document.getElementById("file").files[0];
+
+          if (name.length < 3) {
+            alert("Nama harus lebih dari 3 karakter");
+            event.preventDefault();
+          }
+
+          if (password.length < 6) {
+            alert("Password harus lebih dari 6 karakter");
+            event.preventDefault();
+          }
+
+          if (isNaN(age) || age < 1) {
+            alert("Umur harus berupa angka positif");
+            event.preventDefault();
+          }
+
+          if (file.size > 1024 * 1024) {
+            // 1MB
+            alert("Ukuran file tidak boleh lebih dari 1MB");
+            event.preventDefault();
+          }
+
+          if (file.type !== "text/plain") {
+            alert("File harus berupa teks");
+            event.preventDefault();
+          }
+        });
+    </script>
+  </body>
+</html>
